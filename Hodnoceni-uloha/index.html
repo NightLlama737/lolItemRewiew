@@ -33,8 +33,8 @@
                         <div class="ctverecek" id="15"></div>
     
                     </div>
-                    <h2 id="name">Název: </h2>
-                    <h3 id="number">Cena: </h3>
+                    <h2 id="name"> </h2>
+                    <h3 id="number"></h3>
                 </div>
                 
                 <img class="img_d" id="img" src="">
@@ -49,8 +49,8 @@
                         <div class="ctverecek" id="25"></div>
     
                     </div>
-                    <h2 id="name2">Název: </h2>
-                    <h3 id="number2">Cena: </h3>
+                    <h2 id="name2"></h2>
+                    <h3 id="number2"></h3>
                 </div>
                 
                 <img class="img_d" id="img2" src="">
@@ -65,8 +65,8 @@
                         <div class="ctverecek" id="35"></div>
     
                     </div>
-                    <h2 id="name3">Název: </h2>
-                    <h3 id="number3">Cena: </h3>
+                    <h2 id="name3"></h2>
+                    <h3 id="number3"></h3>
                 </div>
                 
                 <img class="img_d" id="img3" src="">
@@ -88,24 +88,60 @@
         let plusMinus = 0;
 
               const poleItemu = [
-                {hodnoceni: "---",name: "Guinsoo's Rageblade", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Guinsoo%27s_Rageblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110230134"},
-                {hodnoceni: "---",name: "Navori Flickerblade", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e7/Navori_Flickerblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150432"},
-                {hodnoceni: "---",name: "Yun Tal Wildarrows", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/eb/Yun_Tal_Wildarrows_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150444"},
-                {hodnoceni: "---",name: "The Collector", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/9/91/The_Collector_item.png/revision/latest?cb=20221019172837"},
-                {hodnoceni: "---",name: "Terminus", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/d/df/Terminus_item_HD.png/revision/latest/scale-to-width-down/64?cb=20231204214915"},
-                {hodnoceni: "---",name: "Statikk Shiv", number: 2900, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4f/Statikk_Shiv_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230518120817"},
-                {hodnoceni: "---",name: "Rapid Firecanon", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/48/Rapid_Firecannon_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214154"},
-                {hodnoceni: "---",name: "Runaan's Hurricane", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/f/ff/Runaan%27s_Hurricane_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201111001820"},
-                {hodnoceni: "---",name: "Phantom Dancer", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/5/5e/Phantom_Dancer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230613182250"},
-                {hodnoceni: "---",name: "Mercurial Scimitar", number: 3300, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/46/Mercurial_Scimitar_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110234009"},
-                {hodnoceni: "---",name: "Infinity Edge", number: 3400, source: "https://static.wikia.nocookie.net/leagueoflegends/images/a/aa/Infinity_Edge_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109213737"},
-                {hodnoceni: "---",name: "Kraken Slayer", number: 3100, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e9/Kraken_Slayer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110232124"},
-                {hodnoceni: "---",name: "Lord Dominik's Regards", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/3/3c/Lord_Dominik%27s_Regards_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214027"},
-                {hodnoceni: "---",name: "Essence Reaver", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/2/2a/Essence_Reaver_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214442"},
-                {hodnoceni: "---",name: "Bloodthirster", number: 3400, source: "https://static.wikia.nocookie.net/leagueoflegends/images/8/8b/Bloodthirster_item.png/revision/latest?cb=20201118211239"},
-                {hodnoceni: "---",name: "Immortal Shieldbow", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/2/2b/Immortal_Shieldbow_item.png/revision/latest?cb=20201118205028"}
+                {hodnoceni: "0",name: "Guinsoo's Rageblade", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Guinsoo%27s_Rageblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110230134"},
+                {hodnoceni: "0",name: "Navori Flickerblade", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e7/Navori_Flickerblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150432"},
+                {hodnoceni: "0",name: "Yun Tal Wildarrows", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/eb/Yun_Tal_Wildarrows_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150444"},
+                {hodnoceni: "0",name: "The Collector", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/9/91/The_Collector_item.png/revision/latest?cb=20221019172837"},
+                {hodnoceni: "0",name: "Terminus", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/d/df/Terminus_item_HD.png/revision/latest/scale-to-width-down/64?cb=20231204214915"},
+                {hodnoceni: "0",name: "Statikk Shiv", number: 2900, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4f/Statikk_Shiv_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230518120817"},
+                {hodnoceni: "0",name: "Rapid Firecanon", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/48/Rapid_Firecannon_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214154"},
+                {hodnoceni: "0",name: "Runaan's Hurricane", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/f/ff/Runaan%27s_Hurricane_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201111001820"},
+                {hodnoceni: "0",name: "Phantom Dancer", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/5/5e/Phantom_Dancer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230613182250"},
+                {hodnoceni: "0",name: "Mercurial Scimitar", number: 3300, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/46/Mercurial_Scimitar_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110234009"},
+                {hodnoceni: "0",name: "Infinity Edge", number: 3400, source: "https://static.wikia.nocookie.net/leagueoflegends/images/a/aa/Infinity_Edge_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109213737"},
+                {hodnoceni: "0",name: "Kraken Slayer", number: 3100, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e9/Kraken_Slayer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110232124"},
+                {hodnoceni: "0",name: "Lord Dominik's Regards", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/3/3c/Lord_Dominik%27s_Regards_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214027"},
+                {hodnoceni: "0",name: "Essence Reaver", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/2/2a/Essence_Reaver_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214442"},
+                {hodnoceni: "0",name: "Bloodthirster", number: 3400, source: "https://static.wikia.nocookie.net/leagueoflegends/images/8/8b/Bloodthirster_item.png/revision/latest?cb=20201118211239"},
               ]
-              
+              let butL = document.getElementById("buttL");
+              let butR = document.getElementById("buttR");
+              butR.addEventListener("click", function(){
+                if(plusMinus!=poleItemu.length)
+                {
+                    plusMinus += 3;
+                }
+                if(poleItemu[plusMinus].hodnoceni=="0")
+                {
+                    let ctverH = document.getElementsByClassName("ctverecek");
+                    for(let i in ctverH)
+                    {
+                        let i_d = i.id[0];
+                        if(i.id[0]==plusMinus)
+                          i.style.backgroundColor = "white";
+                    }
+
+                }
+                if(poleItemu[plusMinus - 1].hodnoceni=="0")
+                {
+                    let ctverH = document.getElementsByClassName("ctverecek");
+                    for(let i in ctverH)
+                    {
+                        if(i.id[0]==plusMinus - 1)
+                          i.style.backgroundColor = "white";
+                    }
+
+                }
+                if(poleItemu[plusMinus - 2].hodnoceni=="0")
+                {
+                    let ctverH = document.getElementsByClassName("ctverecek");
+                    for(let i in ctverH)
+                    {
+                        if(i.id[0]==plusMinus - 2)
+                          i.style.backgroundColor = "white";
+                    }
+
+                }
                 let nam = document.getElementById("name");
               let num = document.getElementById("number");
               let img = document.getElementById("img");
@@ -116,26 +152,79 @@
               let num3= document.getElementById("number3");
               let img3 = document.getElementById("img3");
               img.src = poleItemu[plusMinus].source;
-              num.innerText +=" " + poleItemu[plusMinus].number;
-              nam.innerText +=" " + poleItemu[plusMinus].name;
+              num.innerText =poleItemu[plusMinus].number;
+              nam.innerText =poleItemu[plusMinus].name;
               img2.src = poleItemu[plusMinus+1].source;
-              nam2.innerText +=" " + poleItemu[plusMinus+1].name;
-              num2.innerText += " " + poleItemu[plusMinus+1].number;
+              nam2.innerText =poleItemu[plusMinus+1].name;
+              num2.innerText =poleItemu[plusMinus+1].number;
               img3.src = poleItemu[plusMinus+2].source;
-              nam3.innerText +=" " + poleItemu[plusMinus+2].name;
-              num3.innerText +=" " + poleItemu[plusMinus+2].number;
+              nam3.innerText =poleItemu[plusMinus+2].name;
+              num3.innerText =poleItemu[plusMinus+2].number;
+              })
+
+
+              butL.addEventListener("click", function(){
+                if(plusMinus != 0)
+                {
+                    plusMinus -=3;
+                }
+                let nam = document.getElementById("name");
+              let num = document.getElementById("number");
+              let img = document.getElementById("img");
+              let nam2 = document.getElementById("name2");
+              let num2 = document.getElementById("number2");
+              let img2 = document.getElementById("img2");
+              let nam3 = document.getElementById("name3");
+              let num3= document.getElementById("number3");
+              let img3 = document.getElementById("img3");
+              img.src = poleItemu[plusMinus].source;
+              num.innerText =poleItemu[plusMinus].number;
+              nam.innerText =poleItemu[plusMinus].name;
+              img2.src = poleItemu[plusMinus+1].source;
+              nam2.innerText =poleItemu[plusMinus+1].name;
+              num2.innerText =poleItemu[plusMinus+1].number;
+              img3.src = poleItemu[plusMinus+2].source;
+              nam3.innerText =poleItemu[plusMinus+2].name;
+              num3.innerText =poleItemu[plusMinus+2].number;
+              })
+                let nam = document.getElementById("name");
+              let num = document.getElementById("number");
+              let img = document.getElementById("img");
+              let nam2 = document.getElementById("name2");
+              let num2 = document.getElementById("number2");
+              let img2 = document.getElementById("img2");
+              let nam3 = document.getElementById("name3");
+              let num3= document.getElementById("number3");
+              let img3 = document.getElementById("img3");
+
+              img.src = poleItemu[plusMinus].source;
+              num.innerText =poleItemu[plusMinus].number;
+              nam.innerText =poleItemu[plusMinus].name;
+              img2.src = poleItemu[plusMinus+1].source;
+              nam2.innerText =poleItemu[plusMinus+1].name;
+              num2.innerText =poleItemu[plusMinus+1].number;
+              img3.src = poleItemu[plusMinus+2].source;
+              nam3.innerText =poleItemu[plusMinus+2].name;
+              num3.innerText =poleItemu[plusMinus+2].number;
               
     
     
               let ctverH = document.getElementsByClassName("ctverecek");
               for (let i = 0; i < 15; i++) {
             const element = ctverH[i];
+                let j = element.id;
+                if(poleItemu[j[0]-1 + plusMinus].hodnoceni!="0")
+                {
+                    for(let i = 0 ; i < 10 ; i++)
+                    {
 
+                    }
+                }
     
     function mouseoverHandler() {
         let j = element.id;
 
-        if(poleItemu[j[0]-1 + plusMinus].hodnoceni=="---")
+        if(poleItemu[j[0]-1 + plusMinus].hodnoceni=="0")
         {
             for (let s = j[1]; s > 0; s--) 
             {
@@ -143,12 +232,13 @@
             }
         }
         
+        
     }
 
     function mouseoutHandler() {
         let j = element.id;
 
-        if(poleItemu[j[0]-1 + plusMinus].hodnoceni=="---")
+        if(poleItemu[j[0]-1 + plusMinus].hodnoceni=="0")
         {
             for (let s = j[1]; s > 0; s--) 
             {
@@ -161,7 +251,7 @@
     function clickHandler() 
     {
         let j = element.id;
-        if(poleItemu[j[0]-1 + plusMinus].hodnoceni=="---")
+        if(poleItemu[j[0]-1 + plusMinus].hodnoceni=="0")
         {
             pocet++;
             for (let s = j[1]; s > 0; s--) 
@@ -170,7 +260,7 @@
             }
             element.removeEventListener("mouseover", mouseoverHandler);
             element.removeEventListener("mouseout", mouseoutHandler);
-            poleItemu[j[0]-1].hodnoceni=j[1];
+            poleItemu[j[0]-1+plusMinus].hodnoceni=j[1];
             alert("Hodnotíte item "+ poleItemu[j[0]-1 + plusMinus].name +" "+ poleItemu[j[0]-1 + plusMinus].hodnoceni + "/5!");
             celkHodnoceni(j[1],pocet);
         }
