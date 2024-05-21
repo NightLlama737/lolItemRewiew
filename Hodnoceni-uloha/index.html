@@ -78,13 +78,19 @@
     
             </div>
         </div>
+        <div class="LRbutD">
+            <button class="buttLR" id="buttL">Předchozí</button>
+            <button class="buttLR" id="buttR">Další</button>
+
+        </div>
         
     </section>
     <script>
         
         let celkHod = 0;
         let pocet = 0;
-        let p =0;
+        let plusMinus = 0;
+
               const poleItemu = [
                 {hodnoceni: "---",name: "Guinsoo's Rageblade", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Guinsoo%27s_Rageblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110230134"},
                 {hodnoceni: "---",name: "Navori Flickerblade", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e7/Navori_Flickerblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150432"},
@@ -103,7 +109,8 @@
                 {hodnoceni: "---",name: "Bloodthirster", number: 3400, source: "https://static.wikia.nocookie.net/leagueoflegends/images/8/8b/Bloodthirster_item.png/revision/latest?cb=20201118211239"},
                 {hodnoceni: "---",name: "Immortal Shieldbow", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/2/2b/Immortal_Shieldbow_item.png/revision/latest?cb=20201118205028"}
               ]
-              let nam = document.getElementById("name");
+              
+                let nam = document.getElementById("name");
               let num = document.getElementById("number");
               let img = document.getElementById("img");
               let nam2 = document.getElementById("name2");
@@ -112,7 +119,6 @@
               let nam3 = document.getElementById("name3");
               let num3= document.getElementById("number3");
               let img3 = document.getElementById("img3");
-              let plusMinus = 0;
               img.src = poleItemu[plusMinus].source;
               num.innerText +=" " + poleItemu[plusMinus].number;
               nam.innerText +=" " + poleItemu[plusMinus].name;
@@ -122,6 +128,9 @@
               img3.src = poleItemu[plusMinus+2].source;
               nam3.innerText +=" " + poleItemu[plusMinus+2].name;
               num3.innerText +=" " + poleItemu[plusMinus+2].number;
+              
+    
+    
               let ctverH = document.getElementsByClassName("ctverecek");
               for (let i = 0; i < 15; i++) {
             const element = ctverH[i];
@@ -189,8 +198,11 @@
             ch.innerText = Math.round(cH);
             ch.innerText += "%";
         
-    }       
+    } 
+             
+                    
 
+    
     
     </script>
 </body>
