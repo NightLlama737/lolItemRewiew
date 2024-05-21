@@ -32,6 +32,7 @@ header p {
     width: 150px;
 }
 .d2 {
+    margin-top: 10px;
     border: 2px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -40,7 +41,7 @@ header p {
     justify-content: space-between;
 }
 .img_d {
-    height: 150px;
+    height: 100px;
     width: auto;
     border: 1px solid black;
     border-radius: 5px;
@@ -51,11 +52,11 @@ header p {
 .ctverD{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    
     height: 25px;
 }
 .ctverecek {
-    margin-left: 3px;
+    margin-left: 5px;
     height: 25px;
     width: 25px;
     border: 2px solid black;
@@ -64,7 +65,4 @@ header p {
     margin-left: auto;
     margin-right: auto;
     width: 500px;
-}
-.d1 {
-    margin-top: 5px;
 }

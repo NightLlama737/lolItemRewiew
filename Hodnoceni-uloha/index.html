@@ -26,18 +26,50 @@
             <div class="d2">
                 <div>
                     <div class="ctverD">
-                        <div class="ctverecek"></div>
-                        <div class="ctverecek"></div>
-                        <div class="ctverecek"></div>
-                        <div class="ctverecek"></div>
-                        <div class="ctverecek"></div>
+                        <div class="ctverecek" id="11"></div>
+                        <div class="ctverecek" id="12"></div>
+                        <div class="ctverecek" id="13"></div>
+                        <div class="ctverecek" id="14"></div>
+                        <div class="ctverecek" id="15"></div>
     
                     </div>
-                    <h2 id="name">Název: </h3>
-                    <h3 id="number">Číslo produktu: </h2>
+                    <h2 id="name">Název: </h2>
+                    <h3 id="number">Cena: </h3>
                 </div>
                 
                 <img class="img_d" id="img" src="">
+            </div>
+            <div class="d2">
+                <div>
+                    <div class="ctverD">
+                        <div class="ctverecek" id="21"></div>
+                        <div class="ctverecek" id="22"></div>
+                        <div class="ctverecek" id="23"></div>
+                        <div class="ctverecek" id="24"></div>
+                        <div class="ctverecek" id="25"></div>
+    
+                    </div>
+                    <h2 id="name2">Název: </h2>
+                    <h3 id="number2">Cena: </h3>
+                </div>
+                
+                <img class="img_d" id="img2" src="">
+            </div>
+            <div class="d2">
+                <div>
+                    <div class="ctverD">
+                        <div class="ctverecek" id="31"></div>
+                        <div class="ctverecek" id="32"></div>
+                        <div class="ctverecek" id="33"></div>
+                        <div class="ctverecek" id="34"></div>
+                        <div class="ctverecek" id="35"></div>
+    
+                    </div>
+                    <h2 id="name3">Název: </h2>
+                    <h3 id="number3">Cena: </h3>
+                </div>
+                
+                <img class="img_d" id="img3" src="">
             </div>
             <div>
     
@@ -50,14 +82,92 @@
     </section>
     <script>
               const poleItemu = [
-                {name: "multipla", number: 502, source: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Fiat_Multipla_front_20080825.jpg/1200px-Fiat_Multipla_front_20080825.jpg"}
+                {hodnoceni: null,name: "Guinsoo's Rageblade", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Guinsoo%27s_Rageblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110230134"},
+                {hodnoceni:null,name: "Navori Flickerblade", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e7/Navori_Flickerblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150432"},
+                {hodnoceni:null,name: "Yun Tal Wildarrows", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/eb/Yun_Tal_Wildarrows_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150444"},
+                {hodnoceni:null,name: "The Collector", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/9/91/The_Collector_item.png/revision/latest?cb=20221019172837"},
+                {hodnoceni:null,name: "Terminus", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/d/df/Terminus_item_HD.png/revision/latest/scale-to-width-down/64?cb=20231204214915"},
+                {hodnoceni:null,name: "Statikk Shiv", number: 2900, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4f/Statikk_Shiv_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230518120817"},
+                {hodnoceni:null,name: "Rapid Firecanon", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/48/Rapid_Firecannon_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214154"},
+                {hodnoceni:null,name: "Runaan's Hurricane", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/f/ff/Runaan%27s_Hurricane_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201111001820"},
+                {hodnoceni:null,name: "Phantom Dancer", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/5/5e/Phantom_Dancer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230613182250"},
+                {hodnoceni:null,name: "Mercurial Scimitar", number: 3300, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/46/Mercurial_Scimitar_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110234009"},
+                {hodnoceni:null,name: "Infinity Edge", number: 3400, source: "https://static.wikia.nocookie.net/leagueoflegends/images/a/aa/Infinity_Edge_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109213737"},
+                {hodnoceni:null,name: "Kraken Slayer", number: 3100, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e9/Kraken_Slayer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110232124"},
+                {hodnoceni:null,name: "Lord Dominik's Regards", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/3/3c/Lord_Dominik%27s_Regards_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214027"},
+                {hodnoceni:null,name: "Essence Reaver", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/2/2a/Essence_Reaver_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214442"},
+                {hodnoceni:null,name: "Bloodthirster", number: 3400, source: "https://static.wikia.nocookie.net/leagueoflegends/images/8/8b/Bloodthirster_item.png/revision/latest?cb=20201118211239"},
+                {hodnoceni:null,name: "Immortal Shieldbow", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/2/2b/Immortal_Shieldbow_item.png/revision/latest?cb=20201118205028"}
               ]
               let nam = document.getElementById("name");
               let num = document.getElementById("number");
-              let img = document.getElementById("img").src = poleItemu[0].source;
-              num.innerText +=" " + poleItemu[0].number;
-              nam.innerText +=" " + poleItemu[0].name;
+              let img = document.getElementById("img");
+              let nam2 = document.getElementById("name2");
+              let num2 = document.getElementById("number2");
+              let img2 = document.getElementById("img2");
+              let nam3 = document.getElementById("name3");
+              let num3= document.getElementById("number3");
+              let img3 = document.getElementById("img3");
+              let plusMinus = 0;
+              img.src = poleItemu[plusMinus].source;
+              num.innerText +=" " + poleItemu[plusMinus].number;
+              nam.innerText +=" " + poleItemu[plusMinus].name;
+              img2.src = poleItemu[plusMinus+1].source;
+              nam2.innerText +=" " + poleItemu[plusMinus+1].name;
+              num2.innerText += " " + poleItemu[plusMinus+1].number;
+              img3.src = poleItemu[plusMinus+2].source;
+              nam3.innerText +=" " + poleItemu[plusMinus+2].name;
+              num3.innerText +=" " + poleItemu[plusMinus+2].number;
+              let ctverH = document.getElementsByClassName("ctverecek");
+              for (let i=0;i<15;i++)
+              {
+                ctverH[i].addEventListener("mouseover", function()
+                {
+                    let j = ctverH[i].id;
+                    
+                    for(let s = j[1];s>0;s--)
+                    {
+                        document.getElementById(j-s+1).style.backgroundColor = "yellow";
+                    }
+                });
 
+
+
+                ctverH[i].addEventListener("mouseout", function()
+                {
+                    let j = ctverH[i].id;
+                    
+                    for(let s = j[1];s>0;s--)
+                    {
+                        document.getElementById(j-s+1).style.backgroundColor = "white";
+                    }
+                });
+
+
+
+                ctverH[i].addEventListener("click", function()
+                {
+                    let j = ctverH[i].id;
+                    
+                    for(let s = j[1];s>0;s--)
+                    {
+                        document.getElementById(j-s+1).style.backgroundColor = "yellow";
+                    }
+
+
+
+                    ctverH[i].removeEventListener("mouseover");
+
+
+
+                    ctverH[i].removeEventListener("mouseout");
+                });
+
+              }
+              
+              
+              
+              
     </script>
 </body>
 </html>
