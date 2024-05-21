@@ -11,7 +11,7 @@
         <h1 class="h1header">Hodnocení produktů</h1>
         <p>Zde můžete hodnotit, odstraňovat či přidávat produkty</p>
         <div class="My_hod">
-            <h2>Moje celkové Hodnocení: ---</h2>
+            <h2 >Moje celkové Hodnocení: <h1 id="cH"></h1> </h2>
             <img src="">
         </div>
     </header>
@@ -81,6 +81,10 @@
         
     </section>
     <script>
+        
+        let celkHod = 0;
+        let pocet = 0;
+        let p =0;
               const poleItemu = [
                 {hodnoceni: "---",name: "Guinsoo's Rageblade", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Guinsoo%27s_Rageblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110230134"},
                 {hodnoceni: "---",name: "Navori Flickerblade", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e7/Navori_Flickerblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150432"},
@@ -126,7 +130,7 @@
     function mouseoverHandler() {
         let j = element.id;
 
-        if(poleItemu[j[0]-1].hodnoceni=="---")
+        if(poleItemu[j[0]-1 + p].hodnoceni=="---")
         {
             for (let s = j[1]; s > 0; s--) 
             {
@@ -139,7 +143,7 @@
     function mouseoutHandler() {
         let j = element.id;
 
-        if(poleItemu[j[0]-1].hodnoceni=="---")
+        if(poleItemu[j[0]-1 + p].hodnoceni=="---")
         {
             for (let s = j[1]; s > 0; s--) 
             {
@@ -152,9 +156,9 @@
     function clickHandler() 
     {
         let j = element.id;
-        if(poleItemu[j[0]-1].hodnoceni=="---")
+        if(poleItemu[j[0]-1 + p].hodnoceni=="---")
         {
-            
+            pocet++;
             for (let s = j[1]; s > 0; s--) 
             {
                 document.getElementById(j - s + 1).style.backgroundColor = "yellow";
@@ -162,7 +166,8 @@
             element.removeEventListener("mouseover", mouseoverHandler);
             element.removeEventListener("mouseout", mouseoutHandler);
             poleItemu[j[0]-1].hodnoceni=j[1];
-            alert("Hodnotíte item "+ poleItemu[j[0]-1].name + poleItemu[j[0]-1].hodnoceni + "/5!");
+            alert("Hodnotíte item "+ poleItemu[j[0]-1 + p].name +" "+ poleItemu[j[0]-1 + p].hodnoceni + "/5!");
+            celkHodnoceni(j[1],pocet);
         }
         
     }
@@ -172,10 +177,21 @@
     element.addEventListener("mouseover", mouseoverHandler);
     element.addEventListener("mouseout", mouseoutHandler);
     element.addEventListener("click", clickHandler);
-
     
 }
-              
+    let ch = document.getElementById("cH");
+        
+    function celkHodnoceni(Hod,pocet)
+    {
+            let p = parseInt(Hod);
+            celkHod += p;
+            cH = (celkHod /(pocet*5)) * 100;
+            ch.innerText = Math.round(cH);
+            ch.innerText += "%";
+        
+    }       
+
+    
     </script>
 </body>
 </html>
