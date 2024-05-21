@@ -71,18 +71,14 @@
                 
                 <img class="img_d" id="img3" src="">
             </div>
-            <div>
+            <div class="LRbutD">
+                <button class="buttLR" id="buttL">Předchozí</button>
+                <button class="buttLR" id="buttR">Další</button>
     
             </div>
-            <div>
-    
-            </div>
+            
         </div>
-        <div class="LRbutD">
-            <button class="buttLR" id="buttL">Předchozí</button>
-            <button class="buttLR" id="buttR">Další</button>
-
-        </div>
+        
         
     </section>
     <script>
@@ -139,7 +135,7 @@
     function mouseoverHandler() {
         let j = element.id;
 
-        if(poleItemu[j[0]-1 + p].hodnoceni=="---")
+        if(poleItemu[j[0]-1 + plusMinus].hodnoceni=="---")
         {
             for (let s = j[1]; s > 0; s--) 
             {
@@ -152,7 +148,7 @@
     function mouseoutHandler() {
         let j = element.id;
 
-        if(poleItemu[j[0]-1 + p].hodnoceni=="---")
+        if(poleItemu[j[0]-1 + plusMinus].hodnoceni=="---")
         {
             for (let s = j[1]; s > 0; s--) 
             {
@@ -165,7 +161,7 @@
     function clickHandler() 
     {
         let j = element.id;
-        if(poleItemu[j[0]-1 + p].hodnoceni=="---")
+        if(poleItemu[j[0]-1 + plusMinus].hodnoceni=="---")
         {
             pocet++;
             for (let s = j[1]; s > 0; s--) 
@@ -175,7 +171,7 @@
             element.removeEventListener("mouseover", mouseoverHandler);
             element.removeEventListener("mouseout", mouseoutHandler);
             poleItemu[j[0]-1].hodnoceni=j[1];
-            alert("Hodnotíte item "+ poleItemu[j[0]-1 + p].name +" "+ poleItemu[j[0]-1 + p].hodnoceni + "/5!");
+            alert("Hodnotíte item "+ poleItemu[j[0]-1 + plusMinus].name +" "+ poleItemu[j[0]-1 + plusMinus].hodnoceni + "/5!");
             celkHodnoceni(j[1],pocet);
         }
         
