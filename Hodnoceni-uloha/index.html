@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header>
+        <h1 class="h1header">Hodnocení produktů</h1>
+        <p>Zde můžete hodnotit, odstraňovat či přidávat produkty</p>
+        <div class="My_hod">
+            <h2>Moje celkové Hodnocení: ---</h2>
+            <img src="">
+        </div>
+    </header>
+    
+    <section class="sect1">
+        <div class="butd">
+            <h3>Seřadit: </h3>
+            <button id="but_Higher">Od nejlépe hodnocených</button>
+            <button id="but_Lower">Od nejhůře hodnocených</button>
+        </div>
+        <div class="d1">
+            <div class="d2">
+                <div>
+                    <div class="ctverD">
+                        <div class="ctverecek"></div>
+                        <div class="ctverecek"></div>
+                        <div class="ctverecek"></div>
+                        <div class="ctverecek"></div>
+                        <div class="ctverecek"></div>
+    
+                    </div>
+                    <h2 id="name">Název: </h3>
+                    <h3 id="number">Číslo produktu: </h2>
+                </div>
+                
+                <img class="img_d" id="img" src="">
+            </div>
+            <div>
+    
+            </div>
+            <div>
+    
+            </div>
+        </div>
+        
+    </section>
+    <script>
+              const poleItemu = [
+                {name: "multipla", number: 502, source: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Fiat_Multipla_front_20080825.jpg/1200px-Fiat_Multipla_front_20080825.jpg"}
+              ]
+              let nam = document.getElementById("name");
+              let num = document.getElementById("number");
+              let img = document.getElementById("img").src = poleItemu[0].source;
+              num.innerText +=" " + poleItemu[0].number;
+              nam.innerText +=" " + poleItemu[0].name;
+
+    </script>
+</body>
+</html>

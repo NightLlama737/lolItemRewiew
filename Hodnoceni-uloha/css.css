@@ -1,0 +1,70 @@
+header {
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: space-between;
+    padding: 10px;
+    display: flex;
+    height: 180px;
+    border-bottom: 2px solid black;
+}
+header h1 {
+    height: 100px;
+    width: 200px;
+}
+header p {
+    position: absolute;
+    left:0;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 120px;
+}
+.My_hod {
+    margin-right: 100px;
+}
+.butd {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 500px;
+}
+.butd h3 {
+    width: 150px;
+}
+.d2 {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+.img_d {
+    height: 150px;
+    width: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+#but_Higher, #but_Lower {
+    height: 20px;
+}
+.ctverD{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 25px;
+}
+.ctverecek {
+    margin-left: 3px;
+    height: 25px;
+    width: 25px;
+    border: 2px solid black;
+}
+.sect1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+.d1 {
+    margin-top: 5px;
+}
