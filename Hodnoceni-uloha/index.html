@@ -111,37 +111,9 @@
                 {
                     plusMinus += 3;
                 }
-                if(poleItemu[plusMinus].hodnoceni=="0")
-                {
-                    let ctverH = document.getElementsByClassName("ctverecek");
-                    for(let i in ctverH)
-                    {
-                        let i_d = i.id[0];
-                        if(i.id[0]==plusMinus)
-                          i.style.backgroundColor = "white";
-                    }
-
-                }
-                if(poleItemu[plusMinus - 1].hodnoceni=="0")
-                {
-                    let ctverH = document.getElementsByClassName("ctverecek");
-                    for(let i in ctverH)
-                    {
-                        if(i.id[0]==plusMinus - 1)
-                          i.style.backgroundColor = "white";
-                    }
-
-                }
-                if(poleItemu[plusMinus - 2].hodnoceni=="0")
-                {
-                    let ctverH = document.getElementsByClassName("ctverecek");
-                    for(let i in ctverH)
-                    {
-                        if(i.id[0]==plusMinus - 2)
-                          i.style.backgroundColor = "white";
-                    }
-
-                }
+               
+               
+                
                 let nam = document.getElementById("name");
               let num = document.getElementById("number");
               let img = document.getElementById("img");
