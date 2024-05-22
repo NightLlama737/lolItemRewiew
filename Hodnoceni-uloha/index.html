@@ -22,8 +22,8 @@
             <button id="but_Higher">Od nejlépe hodnocených</button>
             <button id="but_Lower">Od nejhůře hodnocených</button>
         </div>
-        <div class="d1">
-            <div class="d2">
+        <div class="d1" id="d1">
+            <div class="d2" id="d2">
                 <div>
                     <div class="ctverD">
                         <div class="ctverecek" id="11"></div>
@@ -71,13 +71,12 @@
                 
                 <img class="img_d" id="img3" src="">
             </div>
-            <div class="LRbutD">
-                <button class="buttLR" id="buttL">Předchozí</button>
-                <button class="buttLR" id="buttR">Další</button>
-    
-            </div>
+            
             
         </div>
+        <footer>
+            <button id="next">Další</button>
+        </footer>
         
         
     </section>
@@ -104,84 +103,108 @@
                 {hodnoceni: "0",name: "Essence Reaver", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/2/2a/Essence_Reaver_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214442"},
                 {hodnoceni: "0",name: "Bloodthirster", number: 3400, source: "https://static.wikia.nocookie.net/leagueoflegends/images/8/8b/Bloodthirster_item.png/revision/latest?cb=20201118211239"},
               ]
-              let butL = document.getElementById("buttL");
-              let butR = document.getElementById("buttR");
-              butR.addEventListener("click", function(){
-                if(plusMinus!=poleItemu.length)
+              let butNext = document.getElementById("next");
+              let cPoc = "36";
+              butNext.addEventListener("click", nextThree)
+              function nextThree()
+              {
+                if(plusMinus!= poleItemu.length)
                 {
-                    plusMinus += 3;
+                    plusMinus+=3;
+                    for(let i=0; i<3;i++)
+                    {
+                        let container = document.createElement("div");
+                        container.className = "d2";
+                        let ctverD = document.createElement("div");
+                        let div = document.createElement("div");
+                        ctverD.className = "ctverD";
+                        let ctverec = document.createElement("div");
+                        ctverec.className = "ctverecek";
+                        ctverec.id = cPoc;
+                        cPoc++;
+                        let ctverec2 = document.createElement("div");
+                        ctverec.className = "ctverecek";
+                        ctverec.id = cPoc;
+                        cPoc++;
+                        let ctverec3 = document.createElement("div");
+                        ctverec.className = "ctverecek";
+                        ctverec.id = cPoc;
+                        cPoc++;
+                        let ctverec4 = document.createElement("div");
+                        ctverec.className = "ctverecek";
+                        ctverec.id = cPoc;
+                        cPoc++;
+                        let ctverec5 = document.createElement("div");
+                        ctverec.className = "ctverecek";
+                        ctverec.id = cPoc;
+                        cPoc++;
+                        let nameP = document.createElement("h2");
+                        let numberP = document.createElement("h3");
+                        let imgP = document.createElement("img");
+                        imgP.className = "img_d";
+                        nameP.innerText = poleItemu[i+plusMinus].name;
+                        numberP.innerText = poleItemu[i+plusMinus].number;
+                        imgP.src = poleItemu[i+plusMinus].source;
+                        ctverD.appendChild(ctverec);
+                        ctverD.appendChild(ctverec2);
+                        ctverD.appendChild(ctverec3);
+                        ctverD.appendChild(ctverec4);
+                        ctverD.appendChild(ctverec5);
+                        div.appendChild(ctverD);
+                        div.appendChild(nameP);
+                        div.appendChild(numberP);
+                        container.appendChild(div);
+                        container.appendChild(imgP);
+                        document.getElementById("d1").appendChild(container);
+
+
+                    }
                 }
-               
-               
                 
-                let nam = document.getElementById("name");
-              let num = document.getElementById("number");
-              let img = document.getElementById("img");
-              let nam2 = document.getElementById("name2");
-              let num2 = document.getElementById("number2");
-              let img2 = document.getElementById("img2");
-              let nam3 = document.getElementById("name3");
-              let num3= document.getElementById("number3");
-              let img3 = document.getElementById("img3");
-              img.src = poleItemu[plusMinus].source;
-              num.innerText =poleItemu[plusMinus].number;
-              nam.innerText =poleItemu[plusMinus].name;
-              img2.src = poleItemu[plusMinus+1].source;
-              nam2.innerText =poleItemu[plusMinus+1].name;
-              num2.innerText =poleItemu[plusMinus+1].number;
-              img3.src = poleItemu[plusMinus+2].source;
-              nam3.innerText =poleItemu[plusMinus+2].name;
-              num3.innerText =poleItemu[plusMinus+2].number;
-              })
-
-
-              butL.addEventListener("click", function(){
-                if(plusMinus != 0)
-                {
-                    plusMinus -=3;
-                }
-                let nam = document.getElementById("name");
-              let num = document.getElementById("number");
-              let img = document.getElementById("img");
-              let nam2 = document.getElementById("name2");
-              let num2 = document.getElementById("number2");
-              let img2 = document.getElementById("img2");
-              let nam3 = document.getElementById("name3");
-              let num3= document.getElementById("number3");
-              let img3 = document.getElementById("img3");
-              img.src = poleItemu[plusMinus].source;
-              num.innerText =poleItemu[plusMinus].number;
-              nam.innerText =poleItemu[plusMinus].name;
-              img2.src = poleItemu[plusMinus+1].source;
-              nam2.innerText =poleItemu[plusMinus+1].name;
-              num2.innerText =poleItemu[plusMinus+1].number;
-              img3.src = poleItemu[plusMinus+2].source;
-              nam3.innerText =poleItemu[plusMinus+2].name;
-              num3.innerText =poleItemu[plusMinus+2].number;
-              })
-                let nam = document.getElementById("name");
-              let num = document.getElementById("number");
-              let img = document.getElementById("img");
-              let nam2 = document.getElementById("name2");
-              let num2 = document.getElementById("number2");
-              let img2 = document.getElementById("img2");
-              let nam3 = document.getElementById("name3");
-              let num3= document.getElementById("number3");
-              let img3 = document.getElementById("img3");
-
-              img.src = poleItemu[plusMinus].source;
-              num.innerText =poleItemu[plusMinus].number;
-              nam.innerText =poleItemu[plusMinus].name;
-              img2.src = poleItemu[plusMinus+1].source;
-              nam2.innerText =poleItemu[plusMinus+1].name;
-              num2.innerText =poleItemu[plusMinus+1].number;
-              img3.src = poleItemu[plusMinus+2].source;
-              nam3.innerText =poleItemu[plusMinus+2].name;
-              num3.innerText =poleItemu[plusMinus+2].number;
+              }
               
-    
-    
+
+
+              
+                let nam = document.getElementById("name");
+              let num = document.getElementById("number");
+              let img = document.getElementById("img");
+              let nam2 = document.getElementById("name2");
+              let num2 = document.getElementById("number2");
+              let img2 = document.getElementById("img2");
+              let nam3 = document.getElementById("name3");
+              let num3= document.getElementById("number3");
+              let img3 = document.getElementById("img3");
+
+              img.src = poleItemu[plusMinus].source;
+              num.innerText =poleItemu[plusMinus].number;
+              nam.innerText =poleItemu[plusMinus].name;
+              img2.src = poleItemu[plusMinus+1].source;
+              nam2.innerText =poleItemu[plusMinus+1].name;
+              num2.innerText =poleItemu[plusMinus+1].number;
+              img3.src = poleItemu[plusMinus+2].source;
+              nam3.innerText =poleItemu[plusMinus+2].name;
+              num3.innerText =poleItemu[plusMinus+2].number;
               let ctverH = document.getElementsByClassName("ctverecek");
+              for(let i=0;i<ctverH.length;i++)
+              {
+                ctverH[i].style.backgroundColor = "white";
+              }
+              for(let i=0;i<3;i++)
+              {
+                for(let j=0;i<poleItemu[plusMinus].hodnoceni;i++)
+                {
+                    let stringId2 = (i+1).toString();
+                    let stringId = (j+1).toString();
+                    let sId = stringId2 + stringId;
+                    console.debug(sId);
+                    document.getElementById(sId).style.backgroundColor = "yellow";
+
+                }
+              }
+        
+    
+    
               for (let i = 0; i < 15; i++) {
             const element = ctverH[i];
                 let j = element.id;
