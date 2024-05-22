@@ -68,7 +68,6 @@ header p {
     width: 500px;
 }
 #next {
-    position: fixed;
     background-color: aqua;
     height: 60px;
     width: 60px;
@@ -77,6 +76,5 @@ header p {
     margin-top: 10px;
 }
 footer{
-    position: fixed;
     background-color: white;
 }
