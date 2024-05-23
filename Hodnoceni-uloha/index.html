@@ -35,7 +35,7 @@
                     </div>
                     <h2 id="name"> </h2>
                     <h3 id="number"></h3>
-                    <div class="butKom" id="komentare"></div>
+                    <div class="butKom"></div>
                 </div>
                 
                 <img class="img_d" id="img" src="">
@@ -52,7 +52,7 @@
                     </div>
                     <h2 id="name2"></h2>
                     <h3 id="number2"></h3>
-                    <div class="butKom" id="komentare"></div>
+                    <div class="butKom"></div>
                 </div>
                 
                 <img class="img_d" id="img2" src="">
@@ -69,7 +69,7 @@
                     </div>
                     <h2 id="name3"></h2>
                     <h3 id="number3"></h3>
-                    <div class="butKom" id="komentare"></div>
+                    <div class="butKom"></div>
                 </div>
                 
                 <img class="img_d" id="img3" src="">
@@ -135,6 +135,8 @@
                         let nameP = document.createElement("h2");
                         let numberP = document.createElement("h3");
                         let imgP = document.createElement("img");
+                        let butK = document.createElement("div");
+                        butK.className = "butKom";
                         imgP.className = "img_d";
                         nameP.innerText = poleItemu[i+plusMinus].name;
                         numberP.innerText = poleItemu[i+plusMinus].number;
@@ -143,6 +145,7 @@
                         div.appendChild(ctverD);
                         div.appendChild(nameP);
                         div.appendChild(numberP);
+                        div.appendChild(butK);
                         container.appendChild(div);
                         container.appendChild(imgP);
                         document.getElementById("d1").appendChild(container);
@@ -154,6 +157,23 @@
                     }
 
                 }  
+                let komenty = document.getElementsByClassName("butKom");
+            for(let k=0;k<komenty.length;k++)
+            {
+                function otevZavKoment()
+                {
+                    let pop2 = document.getElementById("popW");
+                    if (pop2.style.display === "none")
+                    {
+                        pop2.style.display = "block";
+                    }
+                    else
+                    {
+                        pop2.style.display = "none";
+                    }
+                }
+                komenty[k].addEventListener("click", otevZavKoment)
+            }
                 for (let i = 0; i < ctverH.length; i++) {
             const element = ctverH[i];
                 let j = element.id;
@@ -341,7 +361,23 @@
                 
             }
             
-            
+            let komenty = document.getElementsByClassName("butKom");
+            for(let k=0;k<komenty.length;k++)
+            {
+                function otevZavKoment()
+                {
+                    let pop2 = document.getElementById("popW");
+                    if (pop2.style.display === "none")
+                    {
+                        pop2.style.display = "block";
+                    }
+                    else
+                    {
+                        pop2.style.display = "none";
+                    }
+                }
+                komenty[k].addEventListener("click", otevZavKoment)
+            }
             
                
 
