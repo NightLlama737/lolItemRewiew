@@ -89,6 +89,7 @@ function nextThree() {
                 butNext.style.display = "none";
 
             }
+            addEventSquare();
 
         }
 
@@ -118,7 +119,7 @@ function addEventSquare() {
                 }
 
                 poleItemu[j[0] - 1].score = j[1];
-                alert("Hodnotíte item " + poleItemu[j[0] - 1 + plusMinus].name + " " + poleItemu[j[0] - 1].score + "/5!");
+                alert("Hodnotíte item " + poleItemu[j[0] - 1].name + " " + poleItemu[j[0] - 1].score + "/5!");
                 celkHodnoceni(j[1], count);
                 popUp();
             }
@@ -158,125 +159,136 @@ function popUp() {
     }
 
 }
+let guinsooComments = [
+    {name: "Vayne", comment: "Není to to co bývalo :(", picture: "https://p1.hiclipart.com/preview/340/384/897/chinese-vindicator-vayne-render-png-clipart-thumbnail.jpg", scoring: 3},
+    {name: "Jax", comment: "Yees, I like that", picture: "https://thumbnail.imgbin.com/24/18/7/imgbin-north-america-league-of-legends-championship-series-riot-games-video-game-league-of-legends-cgjUHJg6bg0YhpLVNXA7CbTkB_t.jpg",scoring: 5},
+    {name: "Twitch", comment: "It's me hehehe", picture: "https://banner2.cleanpng.com/20180822/ovh/kisspng-league-of-legends-twitch-tv-video-games-riot-games-twitch-amp-apos-s-not-so-subtle-hole-in-the-wall-5b7e223c530876.2169121115349929563401.jpg",scoring: 4}
+]
+let runaanComments = [
+    {name: "Zeri", comment: "Bombastický item", picture: "https://static.wikia.nocookie.net/leagueoflegends/images/6/6c/Zeri_Render.png/revision/latest?cb=20220107223713",scoring: 5},
+    {name: "Aphelios", comment: "*Hlasité dýchání*", picture: "https://image.pngaaa.com/852/4889852-middle.png",scoring: 4}
+]
+let navoriComments = [
+    {name: "Ezreal", comment: "Nejenže z toho odstranili AD, ale ještě přejmenovali? No to je ******", picture: "https://w7.pngwing.com/pngs/791/358/png-transparent-ezreal-thumbnail.png",scoring: 1}
+]
+
+let yuntalComments = [
+    {name: "Draven", comment: "Moje pasivka je zpět hell yeah. Vítejte v lize Dravena!", picture: "https://toppng.com/uploads/preview/draven-lol-png-league-of-legends-draven-render-11562867154b5ijfr5nrv.png", scoring: 5},
+    {name: "Jhin", comment: "It is ART to kill someone with this", picture: "https://i.pinimg.com/originals/2d/bc/80/2dbc8054387a5c8c62c5861ab61fb86e.png", scoring: 5}
+]
+
+let collectorComment = [
+    {name: "Smolder", comment: "Pořád stejný, pořád dobrý!", picture: "https://theriotmmo.com/wp-content/uploads/2024/01/league-of-legends-smolder.webp",scoring: 4}
+]
+let terminusComment = [
+    {name: "Kalista", comment: "Bráško jsem tak tanky s tímhle itemem", picture: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4b/Kalista_Render.png/revision/latest?cb=20200514022551", scoring: 4},
+    {name: "Trundle", comment: "Bonk!", picture: "https://www.pngitem.com/pimgs/m/345-3455592_league-of-legends-trundle-png-lol-trundle-skins.png", scoring: 3}
+    
+]
+let phantomComments = [
+    {name: "Tristana",comment: "Holy 60% AS? No to je jeba :o!", picture: "https://p1.hiclipart.com/preview/905/28/954/dragon-trainer-tristana-render-cartoon-characters-png-clipart.jpg", scoring: 4}
+]
+let staticComments = [
+    {name: "vayne", comment: "Dobrý wave clear, levný, ale pořád lehce ******!", picture: "https://p1.hiclipart.com/preview/340/384/897/chinese-vindicator-vayne-render-png-clipart-thumbnail.jpg", scoring: 1}
+] 
+let firecanonComments = [
+    {name:"Jhin", comment: "MASTERPIECE!",picture: "https://i.pinimg.com/originals/2d/bc/80/2dbc8054387a5c8c62c5861ab61fb86e.png", scoring: 5}
+]
 
 let komenty = document.getElementsByClassName("butKom");
 for (let k = 0; k < komenty.length; k++) {
     function otevZavKoment(kom) {
         let pop2 = document.getElementById("popW");
-        if (pop2.style.display === "none") {
-            pop2.style.display = "block";
-            Coments(kom)
+        if (pop2.style.display === "block") {
+            pop2.style.display = "none";
+            Coments(kom);
         }
         else {
-            pop2.style.display = "none";
+            pop2.style.display = "block";
         }
     }
-    komenty[k].addEventListener("click", otevZavKoment(k))
+    komenty[k].addEventListener("click", otevZavKoment(0));
 }
-let guinsooComments = [
-    {name: "Vayne", comment: "Není to to co bývalo :(", picture: "https://p1.hiclipart.com/preview/340/384/897/chinese-vindicator-vayne-render-png-clipart-thumbnail.jpg"},
-    {name: "Jax", comment: "Yees, I like that", picture: "https://thumbnail.imgbin.com/24/18/7/imgbin-north-america-league-of-legends-championship-series-riot-games-video-game-league-of-legends-cgjUHJg6bg0YhpLVNXA7CbTkB_t.jpg"},
-    {name: "Twitch", comment: "It's me hehehe", picture: "https://banner2.cleanpng.com/20180822/ovh/kisspng-league-of-legends-twitch-tv-video-games-riot-games-twitch-amp-apos-s-not-so-subtle-hole-in-the-wall-5b7e223c530876.2169121115349929563401.jpg"}
-]
-let runaanComments = [
-    {name: "Zeri", comment: "Bombastický item", picture: "https://static.wikia.nocookie.net/leagueoflegends/images/6/6c/Zeri_Render.png/revision/latest?cb=20220107223713"},
-    {name: "Aphelios", comment: "*Hlasité dýchání*", picture: "https://image.pngaaa.com/852/4889852-middle.png"}
-]
-let navoriComments = [
-    {name: "Ezreal", comment: "Nejenže z toho odstranili AD, ale ještě přejmenovali? No to je ******", picture: "https://w7.pngwing.com/pngs/791/358/png-transparent-ezreal-thumbnail.png"}
-]
 
-let yuntalComments = [
-    {name: "Draven", comment: "Moje pasivka je zpět hell yeah. Vítejte v lize Dravena!", picture: "https://toppng.com/uploads/preview/draven-lol-png-league-of-legends-draven-render-11562867154b5ijfr5nrv.png"},
-    {name: "Jhin", comment: "It is ART to kill someone with this", picture: "https://i.pinimg.com/originals/2d/bc/80/2dbc8054387a5c8c62c5861ab61fb86e.png"}
-]
-
-let collectorComment = [
-    {name: "Smolder", comment: "Pořád stejný, pořád dobrý!"}
-]
 function Coments(kom) {
     switch (kom) {
 
         case 0:
             {
-
+                writeComments(guinsooComments);
             } break;
 
         case 1:
             {
-
+                writeComments(navoriComments);
             } break;
 
         case 2:
             {
-
+                writeComments(yuntalComments);
             } break;
 
         case 3:
             {
-
+                writeComments(collectorComment);
             } break;
 
         case 4:
             {
-
+                writeComments(terminusComment);
             } break;
 
         case 5:
             {
-
+                writeComments(staticComments);
             } break;
 
         case 6:
             {
-
+                writeComments(firecanonComments);
             } break;
 
         case 7:
             {
-
+                writeComments(runaanComments);
             } break;
 
         case 8:
             {
-
+                writeComments(phantomComments);
             } break;
 
-        case 9:
-            {
-
-            } break;
-
-        case 10:
-            {
-
-            } break;
-
-        case 11:
-            {
-
-            } break;
-
-        case 12:
-            {
-
-            } break;
-
-        case 13:
-            {
-
-            } break;
-
-        case 14:
-            {
-
-            } break;
-
-        case 15:
-            {
-
-            } break;
+       
 
     }
 
+
+}
+function writeComments(comments)
+{
+    for(let i=0;i<comments.length;i++)
+        {
+            let commentDiv = document.createElement("div");
+            commentDiv.className = "comment";
+            let star = document.createElement("img");
+            star.className = "star";
+            let starDiv = document.createElement("div");
+            starDiv.className = "starDiv";
+            star.src = "hvezda.png";
+            let picture = document.createElement("img");
+            picture.src = comments[i].picture;
+            picture.className = "picture";
+            let name = document.createElement("h2");
+            name.innerText = comments[i].name;
+            let comment = document.createElement("p");
+            comment.innerText = "'"+comments[i].comment+"'";
+            starDiv.appendChild(star);
+            commentDiv.appendChild(starDiv);
+            commentDiv.appendChild(name);
+            commentDiv.appendChild(picture);
+            commentDiv.appendChild(comment);
+            let popUp = document.getElementById("popW");
+            popUp.appendChild(commentDiv);
+        }
+    
 }

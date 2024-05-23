@@ -111,10 +111,27 @@ header p {
     width: 20px;
     border-radius: 50%;
 }
-.ctverD:hover .square{
+.square:hover {
     background-color: yellow;
 }
-.square:hover ~ .square  {
-    background-color: white;
+.square:has(~.square:hover){
+    background-color: yellow;
+}
 
+.comment {
+    display: flex;
+    height: 100px;
+    width: 400px;
+}
+.picture {
+    height: 80px;
+    width: 80px;
+}
+.star {
+    width: 20px;
+    height: auto;
+}
+
+.starDiv {
+    width: 60px;
 }
