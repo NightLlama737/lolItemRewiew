@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
     <link rel="stylesheet" href="css.css">
 </head>
+
 <body>
     <header>
         <h1 class="h1header">Hodnocení produktů</h1>
         <p>Zde můžete hodnotit, odstraňovat či přidávat produkty</p>
         <div class="My_hod">
-            <h2 >Moje celkové Hodnocení: <h1 id="cH"></h1> </h2>
+            <h2>Moje celkové Hodnocení: <h1 id="cH"></h1>
+            </h2>
             <img src="">
         </div>
     </header>
-    
+
     <section class="sect1">
         <div class="d1" id="d1">
             <div class="butd">
@@ -23,366 +26,26 @@
                 <button id="but_Higher">Od nejlépe hodnocených</button>
                 <button id="but_Lower">Od nejhůře hodnocených</button>
             </div>
-            <div class="d2" id="d2">
-                <div>
-                    <div class="ctverD">
-                        <div class="ctverecek" id="11"></div>
-                        <div class="ctverecek" id="12"></div>
-                        <div class="ctverecek" id="13"></div>
-                        <div class="ctverecek" id="14"></div>
-                        <div class="ctverecek" id="15"></div>
-    
-                    </div>
-                    <h2 id="name"> </h2>
-                    <h3 id="number"></h3>
-                    <div class="butKom"></div>
-                </div>
-                
-                <img class="img_d" id="img" src="">
-            </div>
-            <div class="d2">
-                <div>
-                    <div class="ctverD">
-                        <div class="ctverecek" id="21"></div>
-                        <div class="ctverecek" id="22"></div>
-                        <div class="ctverecek" id="23"></div>
-                        <div class="ctverecek" id="24"></div>
-                        <div class="ctverecek" id="25"></div>
-    
-                    </div>
-                    <h2 id="name2"></h2>
-                    <h3 id="number2"></h3>
-                    <div class="butKom"></div>
-                </div>
-                
-                <img class="img_d" id="img2" src="">
-            </div>
-            <div class="d2">
-                <div>
-                    <div class="ctverD">
-                        <div class="ctverecek" id="31"></div>
-                        <div class="ctverecek" id="32"></div>
-                        <div class="ctverecek" id="33"></div>
-                        <div class="ctverecek" id="34"></div>
-                        <div class="ctverecek" id="35"></div>
-    
-                    </div>
-                    <h2 id="name3"></h2>
-                    <h3 id="number3"></h3>
-                    <div class="butKom"></div>
-                </div>
-                
-                <img class="img_d" id="img3" src="">
-            </div>
+            
+            
+            
             <div class="borderBut">
                 <button class="butN" id="next">Další</button>
             </div>
         </div>
         <div class="popUp" id="popW">
-
+            
         </div>
         <div class="popUp" id="popW2">
 
         </div>
-        
-        
-        
+
+
+
     </section>
-    
 
-    <script>
-        let uzHod = false;
-        let celkHod = 0;
-        let pocet = 0;
-        let plusMinus = 0;
 
-              const poleItemu = [
-                {hodnoceni: "0",name: "Guinsoo's Rageblade", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Guinsoo%27s_Rageblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110230134"},
-                {hodnoceni: "0",name: "Navori Flickerblade", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e7/Navori_Flickerblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150432"},
-                {hodnoceni: "0",name: "Yun Tal Wildarrows", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/eb/Yun_Tal_Wildarrows_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150444"},
-                {hodnoceni: "0",name: "The Collector", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/9/91/The_Collector_item.png/revision/latest?cb=20221019172837"},
-                {hodnoceni: "0",name: "Terminus", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/d/df/Terminus_item_HD.png/revision/latest/scale-to-width-down/64?cb=20231204214915"},
-                {hodnoceni: "0",name: "Statikk Shiv", number: 2900, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4f/Statikk_Shiv_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230518120817"},
-                {hodnoceni: "0",name: "Rapid Firecanon", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/48/Rapid_Firecannon_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214154"},
-                {hodnoceni: "0",name: "Runaan's Hurricane", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/f/ff/Runaan%27s_Hurricane_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201111001820"},
-                {hodnoceni: "0",name: "Phantom Dancer", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/5/5e/Phantom_Dancer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230613182250"}
-              ]
-              let butNext = document.getElementById("next");
-              let cPoc = 36;
-              butNext.addEventListener("click", nextThree)
-              function nextThree()
-              {
-                if(plusMinus!= poleItemu.length-3)
-                {
-                    plusMinus+=3;
-
-                    for(let i=0; i<3;i++)
-                    {
-                        cPoc+=5;          
-                        let container = document.createElement("div");
-                        container.className = "d2";
-                        let ctverD = document.createElement("div");
-                        let div = document.createElement("div");
-                        ctverD.className = "ctverD";
-                        for(let l=0;l<5;l++)
-                        {
-                            let ctverP = document.createElement("div");
-                            ctverP.className = "ctverecek";
-                            ctverP.id = cPoc;
-                            cPoc++;
-                            ctverD.appendChild(ctverP)
-                        }
-                        let nameP = document.createElement("h2");
-                        let numberP = document.createElement("h3");
-                        let imgP = document.createElement("img");
-                        let butK = document.createElement("div");
-                        butK.className = "butKom";
-                        imgP.className = "img_d";
-                        nameP.innerText = poleItemu[i+plusMinus].name;
-                        numberP.innerText = poleItemu[i+plusMinus].number;
-                        imgP.src = poleItemu[i+plusMinus].source;
-                        
-                        div.appendChild(ctverD);
-                        div.appendChild(nameP);
-                        div.appendChild(numberP);
-                        div.appendChild(butK);
-                        container.appendChild(div);
-                        container.appendChild(imgP);
-                        document.getElementById("d1").appendChild(container);
-                        if (plusMinus==poleItemu.length-3)
-                        {
-                            butNext.style.display = "none";
-                        }  
-  
-                    }
-
-                }  
-                let komenty = document.getElementsByClassName("butKom");
-            for(let k=0;k<komenty.length;k++)
-            {
-                function otevZavKoment()
-                {
-                    let pop2 = document.getElementById("popW");
-                    if (pop2.style.display === "none")
-                    {
-                        pop2.style.display = "block";
-                    }
-                    else
-                    {
-                        pop2.style.display = "none";
-                    }
-                }
-                komenty[k].addEventListener("click", otevZavKoment)
-            }
-                for (let i = 0; i < ctverH.length; i++) {
-            const element = ctverH[i];
-                let j = element.id;
-                
-    
-    function mouseoverHandler() {
-        let j = element.id;
-
-        if(poleItemu[j[0]-1].hodnoceni=="0")
-        {
-            for (let s = j[1]; s > 0; s--) 
-            {
-                document.getElementById(j - s + 1).style.backgroundColor = "yellow";
-            }
-        }
-        
-        
-    }
-
-    function mouseoutHandler() {
-        let j = element.id;
-
-        if(poleItemu[j[0]-1].hodnoceni=="0")
-        {
-            for (let s = j[1]; s > 0; s--) 
-            {
-                document.getElementById(j - s + 1).style.backgroundColor = "white";
-            }
-        }
-        
-    }
-
-    function clickHandler() 
-    {
-        let j = element.id;
-        if(poleItemu[j[0]-1].hodnoceni=="0")
-        {
-            pocet++;
-            for (let s = j[1]; s > 0; s--) 
-            {
-                document.getElementById(j - s + 1).style.backgroundColor = "yellow";
-            }
-            element.removeEventListener("mouseover", mouseoverHandler);
-            element.removeEventListener("mouseout", mouseoutHandler);
-            poleItemu[j[0]-1].hodnoceni=j[1];
-            alert("Hodnotíte item "+ poleItemu[j[0]-1].name +" "+ poleItemu[j[0]-1].hodnoceni + "/5!");
-            celkHodnoceni(j[1],pocet);
-        }
-        
-    }
-        
-        
-
-    element.addEventListener("mouseover", mouseoverHandler);
-    element.addEventListener("mouseout", mouseoutHandler);
-    element.addEventListener("click", clickHandler);
-    
-}
-                     
-              }
-                let nam = document.getElementById("name");
-              let num = document.getElementById("number");
-              let img = document.getElementById("img");
-              let nam2 = document.getElementById("name2");
-              let num2 = document.getElementById("number2");
-              let img2 = document.getElementById("img2");
-              let nam3 = document.getElementById("name3");
-              let num3= document.getElementById("number3");
-              let img3 = document.getElementById("img3");
-
-              img.src = poleItemu[plusMinus].source;
-              num.innerText =poleItemu[plusMinus].number;
-              nam.innerText =poleItemu[plusMinus].name;
-              img2.src = poleItemu[plusMinus+1].source;
-              nam2.innerText =poleItemu[plusMinus+1].name;
-              num2.innerText =poleItemu[plusMinus+1].number;
-              img3.src = poleItemu[plusMinus+2].source;
-              nam3.innerText =poleItemu[plusMinus+2].name;
-              num3.innerText =poleItemu[plusMinus+2].number;
-              let ctverH = document.getElementsByClassName("ctverecek");
-              for(let i=0;i<ctverH.length;i++)
-              {
-                ctverH[i].style.backgroundColor = "white";
-              }
-              for(let i=0;i<3;i++)
-              {
-                for(let j=0;i<poleItemu[plusMinus].hodnoceni;i++)
-                {
-                    let stringId2 = (i+1).toString();
-                    let stringId = (j+1).toString();
-                    let sId = stringId2 + stringId;
-                    console.debug(sId);
-                    document.getElementById(sId).style.backgroundColor = "yellow";
-
-                }
-              }
-        
-    
-              
-              for (let i = 0; i < ctverH.length; i++) {
-            const element = ctverH[i];
-                let j = element.id;
-                
-    
-    function mouseoverHandler() {
-        let j = element.id;
-
-        if(poleItemu[j[0]-1].hodnoceni=="0")
-        {
-            for (let s = j[1]; s > 0; s--) 
-            {
-                document.getElementById(j - s + 1).style.backgroundColor = "yellow";
-            }
-        }
-        
-        
-    }
-
-    function mouseoutHandler() {
-        let j = element.id;
-
-        if(poleItemu[j[0]-1].hodnoceni=="0")
-        {
-            for (let s = j[1]; s > 0; s--) 
-            {
-                document.getElementById(j - s + 1).style.backgroundColor = "white";
-            }
-        }
-        
-    }
-
-    function clickHandler() 
-    {
-        let j = element.id;
-        if(poleItemu[j[0]-1].hodnoceni=="0")
-        {
-            pocet++;
-            for (let s = j[1]; s > 0; s--) 
-            {
-                document.getElementById(j - s + 1).style.backgroundColor = "yellow";
-            }
-            element.removeEventListener("mouseover", mouseoverHandler);
-            element.removeEventListener("mouseout", mouseoutHandler);
-            poleItemu[j[0]-1].hodnoceni=j[1];
-            alert("Hodnotíte item "+ poleItemu[j[0]-1 + plusMinus].name +" "+ poleItemu[j[0]-1].hodnoceni + "/5!");
-            celkHodnoceni(j[1],pocet);
-            popUp();
-        }
-        
-    }
-        
-        
-
-    element.addEventListener("mouseover", mouseoverHandler);
-    element.addEventListener("mouseout", mouseoutHandler);
-    element.addEventListener("click", clickHandler);
-    
-}
-    let ch = document.getElementById("cH");
-        
-    function celkHodnoceni(Hod,pocet)
-    {
-            let p = parseInt(Hod);
-            celkHod += p;
-            cH = (celkHod /(pocet*5)) * 100;
-            ch.innerText = Math.round(cH);
-            ch.innerText += "%";
-        
-    } 
-        
-    function popUp()
-            {
-                let pop = document.getElementById("popW2");
-                if(!uzHod)
-                {
-                    if(pop.style.display ==="block")
-                    {
-                        pop.style.display ="none";
-                    }
-                    else
-                    {
-                        pop.style.display ="block";
-                    }
-                }
-                
-            }
-            
-            let komenty = document.getElementsByClassName("butKom");
-            for(let k=0;k<komenty.length;k++)
-            {
-                function otevZavKoment()
-                {
-                    let pop2 = document.getElementById("popW");
-                    if (pop2.style.display === "none")
-                    {
-                        pop2.style.display = "block";
-                    }
-                    else
-                    {
-                        pop2.style.display = "none";
-                    }
-                }
-                komenty[k].addEventListener("click", otevZavKoment)
-            }
-            
-               
-
-    
-    
-    </script>
+    ,<script src="javaScript.js"></script>
 </body>
+
 </html>
