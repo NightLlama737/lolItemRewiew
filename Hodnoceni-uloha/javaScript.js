@@ -6,15 +6,15 @@ let plusMinus = 0;
 
 
 const poleItemu = [
-    { score: "0", name: "Guinsoo's Rageblade", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Guinsoo%27s_Rageblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110230134" },
-    { score: "0", name: "Navori Flickerblade", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e7/Navori_Flickerblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150432" },
-    { score: "0", name: "Yun Tal Wildarrows", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/eb/Yun_Tal_Wildarrows_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150444" },
-    { score: "0", name: "The Collector", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/9/91/The_Collector_item.png/revision/latest?cb=20221019172837" },
-    { score: "0", name: "Terminus", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/d/df/Terminus_item_HD.png/revision/latest/scale-to-width-down/64?cb=20231204214915" },
-    { score: "0", name: "Statikk Shiv", number: 2900, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4f/Statikk_Shiv_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230518120817" },
-    { score: "0", name: "Rapid Firecanon", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/48/Rapid_Firecannon_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214154" },
-    { score: "0", name: "Runaan's Hurricane", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/f/ff/Runaan%27s_Hurricane_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201111001820" },
-    { score: "0", name: "Phantom Dancer", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/5/5e/Phantom_Dancer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230613182250" }
+    { score: "0", name: "Guinsoo's Rageblade", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Guinsoo%27s_Rageblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110230134", order: 1 },
+    { score: "0", name: "Navori Flickerblade", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e7/Navori_Flickerblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150432", order: 2 },
+    { score: "0", name: "Yun Tal Wildarrows", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/eb/Yun_Tal_Wildarrows_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150444", order:3 },
+    { score: "0", name: "The Collector", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/9/91/The_Collector_item.png/revision/latest?cb=20221019172837", order:4  },
+    { score: "0", name: "Terminus", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/d/df/Terminus_item_HD.png/revision/latest/scale-to-width-down/64?cb=20231204214915", order:5 },
+    { score: "0", name: "Statikk Shiv", number: 2900, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4f/Statikk_Shiv_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230518120817", order:6 },
+    { score: "0", name: "Rapid Firecanon", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/48/Rapid_Firecannon_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214154", order:7 },
+    { score: "0", name: "Runaan's Hurricane", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/f/ff/Runaan%27s_Hurricane_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201111001820",order:8 },
+    { score: "0", name: "Phantom Dancer", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/5/5e/Phantom_Dancer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230613182250", order:9 }
 ]
 let butNext = document.getElementById("next");
 let cPoc = 6;
@@ -57,58 +57,77 @@ let sortButHigher = document.getElementById("but_Higher");
 
 let sortButLower = document.getElementById("but_Lower");
 
-sortButHigher.addEventListener("click", function() {
-    let res = poleItemu.sort(function(a,b){return  b.score-a.score})
+sortButHigher.addEventListener("click", function () {
+    let res = poleItemu.sort(function (a, b) { return b.score - a.score })
     alert(res[0].score);
     let containerDiv = document.getElementById("d1");
-    for (let f = containerDiv.children.length -1; f > 0; f--) {
-        if (containerDiv.children[f].className !== "borderBut")
-            {
-                containerDiv.removeChild(containerDiv.children[f]);
-            }
+    for (let f = containerDiv.children.length - 1; f > 0; f--) {
+        if (containerDiv.children[f].className !== "borderBut") {
+            containerDiv.removeChild(containerDiv.children[f]);
+        }
     }
     cPoc = 6;
-    for (let s = 0 ; s<plusMinus+3; s++)
-        {
-            cPoc += 5;
-            let container = document.createElement("div");
-            container.className = "d2";
-            let ctverD = document.createElement("div");
-            let div = document.createElement("div");
-            ctverD.className = "ctverD";
-            for (let l = 0; l < 5; l++) {
-                let ctverP = document.createElement("div");
-                ctverP.className = "square";
-                ctverP.id = cPoc;
-                cPoc++;
-                ctverD.appendChild(ctverP)
-            }
-            let nameP = document.createElement("h2");
-            let numberP = document.createElement("h3");
-            let imgP = document.createElement("img");
-            let butK = document.createElement("div");
-            butK.className = "butKom";
-            butK.id = butComentCount;
-            butComentCount++;
-            imgP.className = "img_d";
-            nameP.innerText = res[s].name;
-            numberP.innerText = res[s].number;
-            imgP.src = res[s].source;
-
-            div.appendChild(ctverD);
-            div.appendChild(nameP);
-            div.appendChild(numberP);
-            div.appendChild(butK);
-            container.appendChild(div);
-            container.appendChild(imgP);
-            document.getElementById("d1").appendChild(container);
-            if (plusMinus == poleItemu.length - 3) {
-                butNext.style.display = "none";
-
-            }
-            addEventSquare();
+    for (let s = 0; s < plusMinus + 3; s++) {
+        cPoc += 5;
+        let container = document.createElement("div");
+        container.className = "d2";
+        let ctverD = document.createElement("div");
+        let div = document.createElement("div");
+        ctverD.className = "ctverD";
+        for (let l = 0; l < 5; l++) {
+            let ctverP = document.createElement("div");
+            ctverP.className = "square";
+            let iD = res[s].order.toString() + (l+1).toString();
+            ctverP.id = iD;
+            cPoc++;
+            ctverD.appendChild(ctverP)
         }
-    
+        let nameP = document.createElement("h2");
+        let numberP = document.createElement("h3");
+        let imgP = document.createElement("img");
+        let butK = document.createElement("div");
+        butK.className = "butKom";
+        butK.id = butComentCount;
+        butComentCount++;
+        imgP.className = "img_d";
+        nameP.innerText = res[s].name;
+        numberP.innerText = res[s].number;
+        imgP.src = res[s].source;
+
+        div.appendChild(ctverD);
+        div.appendChild(nameP);
+        div.appendChild(numberP);
+        div.appendChild(butK);
+        container.appendChild(div);
+        container.appendChild(imgP);
+        document.getElementById("d1").appendChild(container);
+        if (plusMinus == poleItemu.length - 3) {
+            butNext.style.display = "none";
+
+        }
+        addEventSquare();
+
+
+    }
+    let squareDivs = document.getElementsByClassName("ctverD");
+    for (let j = 0; j < containerDiv.children.length; j++) {
+        if (squareDivs[j] != undefined)
+            {
+                let iD = squareDivs[j].id;
+                for(let s=poleItemu[parseInt(iD[0])]; s>0 ; s--)
+                    {
+                        let nextID = iD[0].toString() + s.toString();
+                        document.getElementById(nextID).style,backgroundColor = "yellow";
+                    }
+            }
+        
+
+
+    }
+
+
+
+
 })
 
 butNext.addEventListener("click", nextThree)
