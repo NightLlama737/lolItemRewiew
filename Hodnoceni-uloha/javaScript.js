@@ -8,13 +8,13 @@ let plusMinus = 0;
 const poleItemu = [
     { score: "0", name: "Guinsoo's Rageblade", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/6/64/Guinsoo%27s_Rageblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201110230134", order: 1 },
     { score: "0", name: "Navori Flickerblade", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/e7/Navori_Flickerblade_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150432", order: 2 },
-    { score: "0", name: "Yun Tal Wildarrows", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/eb/Yun_Tal_Wildarrows_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150444", order:3 },
-    { score: "0", name: "The Collector", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/9/91/The_Collector_item.png/revision/latest?cb=20221019172837", order:4  },
-    { score: "0", name: "Terminus", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/d/df/Terminus_item_HD.png/revision/latest/scale-to-width-down/64?cb=20231204214915", order:5 },
-    { score: "0", name: "Statikk Shiv", number: 2900, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4f/Statikk_Shiv_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230518120817", order:6 },
-    { score: "0", name: "Rapid Firecanon", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/48/Rapid_Firecannon_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214154", order:7 },
-    { score: "0", name: "Runaan's Hurricane", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/f/ff/Runaan%27s_Hurricane_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201111001820",order:8 },
-    { score: "0", name: "Phantom Dancer", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/5/5e/Phantom_Dancer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230613182250", order:9 }
+    { score: "0", name: "Yun Tal Wildarrows", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/e/eb/Yun_Tal_Wildarrows_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240506150444", order: 3 },
+    { score: "0", name: "The Collector", number: 3200, source: "https://static.wikia.nocookie.net/leagueoflegends/images/9/91/The_Collector_item.png/revision/latest?cb=20221019172837", order: 4 },
+    { score: "0", name: "Terminus", number: 3000, source: "https://static.wikia.nocookie.net/leagueoflegends/images/d/df/Terminus_item_HD.png/revision/latest/scale-to-width-down/64?cb=20231204214915", order: 5 },
+    { score: "0", name: "Statikk Shiv", number: 2900, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/4f/Statikk_Shiv_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230518120817", order: 6 },
+    { score: "0", name: "Rapid Firecanon", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/4/48/Rapid_Firecannon_item_HD.png/revision/latest/scale-to-width-down/64?cb=20240109214154", order: 7 },
+    { score: "0", name: "Runaan's Hurricane", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/f/ff/Runaan%27s_Hurricane_item_HD.png/revision/latest/scale-to-width-down/64?cb=20201111001820", order: 8 },
+    { score: "0", name: "Phantom Dancer", number: 2600, source: "https://static.wikia.nocookie.net/leagueoflegends/images/5/5e/Phantom_Dancer_item_HD.png/revision/latest/scale-to-width-down/64?cb=20230613182250", order: 9 }
 ]
 let butNext = document.getElementById("next");
 let cPoc = 6;
@@ -27,17 +27,31 @@ for (let i = 0; i < 3; i++) {
     ctverD.className = "ctverD";
     for (let l = 0; l < 5; l++) {
         let ctverP = document.createElement("div");
-        ctverP.className = "square";
         ctverP.id = cPoc;
-        cPoc++;
-        ctverD.appendChild(ctverP)
+        ctverP.className = "square"
+        if(poleItemu[i+plusMinus].score != "0")
+            {
+                if (l<poleItemu[i+plusMinus].score)
+                    {
+                        ctverP.className = "ySquare"
+                    }
+                    else
+                    {
+                        ctverP.className = "square";
+                    }
+            }
+            
+            
+            cPoc++;
+        ctverD.appendChild(ctverP);
     }
     let nameP = document.createElement("h2");
     let numberP = document.createElement("h3");
     let imgP = document.createElement("img");
-    let butK = document.createElement("div");
+    let butK = document.createElement("button");
     butK.className = "butKom";
     butK.id = butComentCount;
+    butK.innerText = "Komenty";
     butComentCount++;
     imgP.className = "img_d";
     nameP.innerText = poleItemu[i + plusMinus].name;
@@ -50,15 +64,17 @@ for (let i = 0; i < 3; i++) {
     div.appendChild(butK);
     container.appendChild(div);
     container.appendChild(imgP);
-    document.getElementById("d1").appendChild(container);
+    let d1 = document.getElementById("d1").appendChild(container);
+    
     addEventSquare();
+
 }
 let sortButHigher = document.getElementById("but_Higher");
 
 let sortButLower = document.getElementById("but_Lower");
 
 sortButHigher.addEventListener("click", function () {
-    let res = poleItemu.sort(function (a, b) { return b.score - a.score })
+    let res = poleItemu.sort(function (a, b) { return b.score - a.score });
     alert(res[0].score);
     let containerDiv = document.getElementById("d1");
     for (let f = containerDiv.children.length - 1; f > 0; f--) {
@@ -77,15 +93,116 @@ sortButHigher.addEventListener("click", function () {
         for (let l = 0; l < 5; l++) {
             let ctverP = document.createElement("div");
             ctverP.className = "square";
-            let iD = res[s].order.toString() + (l+1).toString();
+            let iD = res[s].order.toString() + (l + 1).toString();
             ctverP.id = iD;
             cPoc++;
+            if(res[s].score != "0")
+                {
+                    if (l<res[s].score)
+                        {
+                            ctverP.className = "ySquare"
+                        }
+                        else
+                        {
+                            ctverP.className = "square";
+                        }
+                }
             ctverD.appendChild(ctverP)
         }
         let nameP = document.createElement("h2");
         let numberP = document.createElement("h3");
         let imgP = document.createElement("img");
-        let butK = document.createElement("div");
+        let butK = document.createElement("button");
+        butK.className = "butKom";
+        butK.id = butComentCount;
+        butComentCount++;
+        butK.innerText = "Komenty";
+        imgP.className = "img_d";
+        nameP.innerText = res[s].name;
+        numberP.innerText = res[s].number;
+        imgP.src = res[s].source;
+
+        div.appendChild(ctverD);
+        div.appendChild(nameP);
+        div.appendChild(numberP);
+        div.appendChild(butK);
+        container.appendChild(div);
+        container.appendChild(imgP);
+        document.getElementById("d1").appendChild(container);
+        if (plusMinus == poleItemu.length - 3) {
+            butNext.style.display = "none";
+
+        }
+        let komenty = document.getElementsByClassName("butKom");
+
+        for (let k = 0; k < komenty.length; k++) {
+            (function (index) {
+                komenty[index].addEventListener("click", function () {
+                    otevZavKoment(index);
+                });
+            })(k);
+        }
+        addEventSquare();
+
+
+    }
+    let squareDivs = document.getElementsByClassName("ctverD");
+    for (let j = 0; j < containerDiv.children.length; j++) {
+        if (squareDivs[j] != undefined) {
+            let iD = squareDivs[j].id;
+            for (let s = poleItemu[parseInt(iD[0])]; s > 0; s--) {
+                let nextID = iD[0].toString() + s.toString();
+                document.getElementById(nextID).style, backgroundColor = "yellow";
+            }
+        }
+
+
+
+    }
+
+
+
+
+})
+
+sortButLower.addEventListener("click", function () {
+    let res = poleItemu.sort(function (a, b) { return a.score - b.score });
+    alert(res[0].score);
+    let containerDiv = document.getElementById("d1");
+    for (let f = containerDiv.children.length - 1; f > 0; f--) {
+        if (containerDiv.children[f].className !== "borderBut") {
+            containerDiv.removeChild(containerDiv.children[f]);
+        }
+    }
+    for (let s = 0; s < plusMinus + 3; s++) {
+        let container = document.createElement("div");
+        container.className = "d2";
+        let ctverD = document.createElement("div");
+        let div = document.createElement("div");
+        ctverD.className = "ctverD";
+        for (let l = 0; l < 5; l++) {
+            let ctverP = document.createElement("div");
+            ctverP.className = "square";
+            let iD = res[s].order.toString() + (l + 1).toString();
+            ctverP.id = iD;
+            if(poleItemu[i+plusMinus].score != "0")
+                {
+                    if (l<poleItemu[i+plusMinus].score)
+                        {
+                            ctverP.className = "ySquare"
+                        }
+                        else
+                        {
+                            ctverP.className = "square";
+                        }
+                }
+            ctverD.appendChild(ctverP)
+        }
+        let nameP = document.createElement("h2");
+        let numberP = document.createElement("h3");
+        let imgP = document.createElement("img");
+        let butK = document.createElement("button");
+        butK.innerText = "Komenty";
         butK.className = "butKom";
         butK.id = butComentCount;
         butComentCount++;
@@ -105,30 +222,30 @@ sortButHigher.addEventListener("click", function () {
             butNext.style.display = "none";
 
         }
+        let komenty = document.getElementsByClassName("butKom");
+
+        for (let k = 0; k < komenty.length; k++) {
+            (function (index) {
+                komenty[index].addEventListener("click", function () {
+                    otevZavKoment(index);
+                });
+            })(k);
+        }
         addEventSquare();
 
 
     }
-    let squareDivs = document.getElementsByClassName("ctverD");
-    for (let j = 0; j < containerDiv.children.length; j++) {
-        if (squareDivs[j] != undefined)
-            {
-                let iD = squareDivs[j].id;
-                for(let s=poleItemu[parseInt(iD[0])]; s>0 ; s--)
-                    {
-                        let nextID = iD[0].toString() + s.toString();
-                        document.getElementById(nextID).style,backgroundColor = "yellow";
-                    }
-            }
-        
 
 
-    }
+
+
 
 
 
 
 })
+
+
 
 butNext.addEventListener("click", nextThree)
 
@@ -149,12 +266,24 @@ function nextThree() {
                 ctverP.className = "square";
                 ctverP.id = cPoc;
                 cPoc++;
+                if(poleItemu[i+plusMinus].score != "0")
+                    {
+                        if (l<poleItemu[i+plusMinus].score)
+                            {
+                                ctverP.className = "ySquare"
+                            }
+                            else
+                            {
+                                ctverP.className = "square";
+                            }
+                    }
                 ctverD.appendChild(ctverP)
             }
             let nameP = document.createElement("h2");
             let numberP = document.createElement("h3");
             let imgP = document.createElement("img");
-            let butK = document.createElement("div");
+            let butK = document.createElement("button");
+            butK.innerText = "Komenty";
             butK.className = "butKom";
             butK.id = butComentCount;
             butComentCount++;
@@ -213,6 +342,7 @@ function addEventSquare() {
 
                 poleItemu[j[0] - 1].score = j[1];
                 alert("Hodnotíte item " + poleItemu[j[0] - 1].name + " " + poleItemu[j[0] - 1].score + "/5!");
+                addComments(poleItemu[j[0] - 1]);
                 celkHodnoceni(j[1], count);
             }
 
@@ -225,8 +355,96 @@ function addEventSquare() {
 
     }
 }
+function addComments(objekt) {
+    let container = document.getElementById("popW2");
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
 
 
+    container.style.display = "block";
+    let divStar = document.createElement("div");
+    divStar.className = "starDiv2";
+    for (let x = 0; x < objekt.score; x++) {
+        let imgStar = document.createElement("img");
+        imgStar.src = "hvezda.png";
+        imgStar.className = "star2";
+        divStar.appendChild(imgStar);
+        container.appendChild(divStar);
+    }
+
+
+    let input = document.createElement("textarea");
+    input.innerText = "Napište svůj komentář";
+    input.rows = "3";
+    input.cols = "25";
+    input.className = "formText";
+    let buttonS = document.createElement("button");
+    buttonS.innerText = "Odeslat";
+    buttonS.addEventListener("click", function () {
+        switch (objekt.order) {
+
+            case 1:
+                {
+                    addToComments(guinsooComments,input.value, objekt.score,1);
+                } break;
+    
+            case 2:
+                {
+                    addToComments(navoriComments,input.value, objekt.score,2);
+                } break;
+    
+            case 3:
+                {
+                    addToComments(yuntalComments,input.value, objekt.score,3);
+                } break;
+    
+            case 4:
+                {
+                    addToComments(collectorComment,input.value, objekt.score,4);
+                } break;
+    
+            case 5:
+                {
+                    addToComments(terminusComment,input.value, objekt.score,5);
+                } break;
+    
+            case 6:
+                {
+                    addToComments(staticComments,input.value, objekt.score,6);
+                } break;
+    
+            case 7:
+                {
+                    addToComments(firecanonComments,input.value, objekt.score,7);
+                } break;
+    
+            case 8:
+                {
+                    addToComments(runaanComments,input.value, objekt.score,8);
+                } break;
+    
+            case 9:
+                {
+                    addToComments(phantomComments,input.value, objekt.score,9);
+                } break;
+            }
+    });
+    container.appendChild(input);
+    container.appendChild(buttonS);
+
+
+
+
+
+}
+function addToComments(toComments, text, score,order)
+{
+    let newComment = {name: "Summoner", comment: text , picture: "https://download.logo.wine/logo/Riot_Games/Riot_Games-Logo.wine.png", scoring: score};
+    toComments.push(newComment);
+    otevZavKoment(order-1);
+    alert(toComments[toComments.length-1].comment);
+}
 
 let ch = document.getElementById("cH");
 
@@ -236,7 +454,6 @@ function celkHodnoceni(Hod, count) {
     cH = (finalScore / (count * 5)) * 100;
     ch.innerText = Math.round(cH);
     ch.innerText += "%";
-
 }
 
 

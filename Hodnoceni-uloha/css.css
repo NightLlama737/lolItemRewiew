@@ -34,7 +34,6 @@ header p {
 }
 .d1 {
     margin-left: -500px;
-    text-align: center;
     margin-bottom: 70px;
 }
 .d2 {
@@ -66,6 +65,7 @@ header p {
     height: 25px;
     width: 25px;
     border: 2px solid black;
+    
     border-radius: 50%;
 }
 .sect1 {
@@ -77,8 +77,9 @@ header p {
     margin-right: auto;
     width: 99vw;
 }
+
 #next {
-    
+    text-align: center;
     background-color: rgba(60, 139, 139, 0.712);
     height: 60px;
     width: 60px;
@@ -101,22 +102,45 @@ header p {
     overflow-y:scroll;
     overflow-x:hidden;
 }
-::-webkit-scrollbar {
-    scrollbar-width: 30px;
-    scrollbar-color: aqua;
+.popUp2 {
+    text-align: center;
+    display: none;
+    top: 280px;
+    border: 2px solid black;
+    border-radius: 5px;
+    left: 100px;
+    align-items: center;
+    width: 300px;
+    height: 150px;
+    position:fixed;
+    overflow-y:scroll;
+    overflow-x:hidden;
 }
+
 .borderBut {
+    text-align: center;
+
     bottom: 0;
     width: 524px;
     position: fixed;
     background-color: white;
 }
+.div-textAlign {
+    text-align: left;
+}
 .butKom {
+
     border: 1px solid black;
     background-color: rgba(60, 139, 139, 0.712);
     height: 20px;
-    width: 20px;
-    border-radius: 50%;
+    width: 120px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px 1px;
+    transition-duration: 0.07s;
+}
+.butKom:active {
+    box-shadow: none;
+    transform: translate(3px,3px);
 }
 .square:hover {
     background-color: yellow;
@@ -163,4 +187,45 @@ header p {
 
 .commentText {
     margin-right: 10px;
+}
+.buttSort {
+    border: 1px solid black;
+    background-color: rgba(60, 139, 139, 0.712);
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px 1px;
+    transition-duration: 0.07s;
+}
+.buttSort:active {
+    box-shadow: none;
+    transform: translate(3px,3px);
+
+}
+.ySquare {
+    background-color: yellow;
+    margin-left: 5px;
+    height: 25px;
+    width: 25px;
+    border: 2px solid black;
+    
+    border-radius: 50%;
+}
+.starDiv2 {
+    
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 300px;
+}
+.star2 {
+    height: 40px;
+    width: auto;
+}
+.formText {
+    border-radius: 10px;
+    height: 50px;
+    width: 250px;
+    resize: none;
+    border: 2px solid  rgba(60, 139, 139, 0.712);
 }
